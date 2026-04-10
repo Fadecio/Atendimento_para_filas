@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Fila de Atendimento</title>
+  <link rel="stylesheet" href="src/css/reset.css">
+  <link rel="stylesheet" href="src/css/global.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>🎫 Fila de Atendimento</h1>
+
+    <div class="form">
+      <input type="text" id="nome" placeholder="Digite o nome">
+      <button onclick="adicionar()">Adicionar</button>
+      <button class="priority" onclick="adicionarPrioridade()">Prioridade</button>
+    </div>
+
+    <div class="acoes">
+      <button onclick="atender()">Atender Próximo</button>
+      <button onclick="limpar()">Limpar Fila</button>
+    </div>
+
+    <p id="contador"></p>
+
+    <ul id="lista"></ul>
+  </div>
+
+  
+</body>
+</html>
