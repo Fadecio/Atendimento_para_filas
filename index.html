@@ -2,31 +2,42 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Fila de Atendimento</title>
+  <title>QueuePro</title>
   <link rel="stylesheet" href="src/css/reset.css">
   <link rel="stylesheet" href="src/css/global.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>🎫 Fila de Atendimento</h1>
+  <div class="app">
 
-    <div class="form">
-      <input type="text" id="nome" placeholder="Digite o nome">
-      <button onclick="adicionar()">Adicionar</button>
-      <button class="priority" onclick="adicionarPrioridade()">Prioridade</button>
-    </div>
+    <header>
+      <h1>QueuePro</h1>
+      <span>Gestão de Atendimento</span>
+    </header>
 
-    <div class="acoes">
-      <button onclick="atender()">Atender Próximo</button>
-      <button onclick="limpar()">Limpar Fila</button>
-    </div>
+    <main class="card">
 
-    <p id="contador"></p>
+      <div class="input-group">
+        <input type="text" id="nome" placeholder="Nome do cliente...">
+        <button onclick="adicionar()">Adicionar</button>
+        <button class="priority" onclick="adicionarPrioridade()">Prioridade</button>
+      </div>
 
-    <ul id="lista"></ul>
+      <div class="actions">
+        <button onclick="atender()">Atender</button>
+        <button class="danger" onclick="limpar()">Limpar</button>
+      </div>
+
+      <div class="info">
+        <p id="contador"></p>
+      </div>
+
+      <ul id="lista"></ul>
+
+    </main>
+
   </div>
 
-  
+<!-- <script src="script.js"></script> -->
 </body>
 </html>
