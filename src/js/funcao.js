@@ -1,18 +1,44 @@
 let fila = [];
 
+function adicionarComInput() {
+  const nomeInput = document.getElementById("nome").value;
+  if (nomeInput.trim() === "") {
+    alert("Por favor, digite um nome!");
+    return;
+  }
+  adicionarPessoa(nomeInput);
+  document.getElementById("nome").value = "";
+}
+
 function adicionarPessoa(nome) {
   fila.push(nome);
   renderizarFila();
 }
 
-adicionarPessoa();
+function adicionarPrioritarioComInput() {
+  const nomeInput = document.getElementById("nome").value;
+  if (nomeInput.trim() === "") {
+    alert("Por favor, digite um nome!");
+    return;
+  }
+  adicionarPessoaPrioritaria(nomeInput);
+  document.getElementById("nome").value = "";
+}
+
+function adicionarPessoaPrioritaria(nome) {
+  fila.unshift(nome);
+  renderizarFila();
+}
 
 function atenderPessoa() {
   fila.shift();
   renderizarFila();
 }
 
-atenderPessoa();
+function limpar() {
+  fila = [];
+  renderizarFila();
+}
 
 function renderizarFila() {
   let lista = document.getElementById("lista");
@@ -24,5 +50,3 @@ function renderizarFila() {
     lista.appendChild(li);
   });
 }
-
-renderizarFila();
