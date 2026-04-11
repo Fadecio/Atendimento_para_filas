@@ -1,52 +1,67 @@
-let fila = [];
+let fila = JSON.parse(localStorage.getItem("fila")) || [];
 
-function adicionarComInput() {
-  const nomeInput = document.getElementById("nome").value;
-  if (nomeInput.trim() === "") {
+function salvar() {
+  localStorage.setItem("fila", JSON.stringify(fila));
+}
+
+function adicionar(tipo = "normal") {
+  const input = document.getElementById("nome");
+  const nome = input.value.trim();
+
+  if (!nome) {
     alert("Por favor, digite um nome!");
     return;
   }
-  adicionarPessoa(nomeInput);
-  document.getElementById("nome").value = "";
-}
 
-function adicionarPessoa(nome) {
-  fila.push(nome);
-  renderizarFila();
-}
-
-function adicionarPrioritarioComInput() {
-  const nomeInput = document.getElementById("nome").value;
-  if (nomeInput.trim() === "") {
-    alert("Por favor, digite um nome!");
-    return;
+  if (tipo === "prioridade") {
+    fila.unshift({ nome, prioridade: true });
+  } else {
+    fila.push({ nome, prioridade: false });
   }
-  adicionarPessoaPrioritaria(nomeInput);
-  document.getElementById("nome").value = "";
-}
 
-function adicionarPessoaPrioritaria(nome) {
-  fila.unshift(nome);
+  input.value = "";
+  salvar();
   renderizarFila();
 }
 
 function atenderPessoa() {
+  if (fila.length === 0) {
+    alert("A fila está vazia!");
+    return;
+  }
+
   fila.shift();
+  salvar();
   renderizarFila();
 }
 
 function limpar() {
   fila = [];
+  salvar();
   renderizarFila();
 }
 
 function renderizarFila() {
-  let lista = document.getElementById("lista");
+  const lista = document.getElementById("lista");
   lista.innerHTML = "";
+
+  // if (fila.length === 0) {
+  //   lista.innerHTML = "<li>A fila está vazia!</li>";
+  //   return;
+  // }
 
   fila.forEach((pessoa, index) => {
     const li = document.createElement("li");
-    li.textContent = `${index + 1}. ${pessoa}`;
+    li.innerHTML = `<span>${index + 1}. ${pessoa.nome}</span> 
+    ${pessoa.prioridade ? '<span class="tag">Prioridade</span>' : ''}`;
+
+    if (pessoa.prioridade) {
+  li.classList.add("prioridade");
+}
+
     lista.appendChild(li);
+    
   });
 }
+
+renderizarFila();
