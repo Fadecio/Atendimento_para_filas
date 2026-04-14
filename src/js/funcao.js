@@ -45,22 +45,16 @@ function renderizarFila() {
   const lista = document.getElementById("lista");
   lista.innerHTML = "";
 
-  // if (fila.length === 0) {
-  //   lista.innerHTML = "<li>A fila está vazia!</li>";
-  //   return;
-  // }
-
   fila.forEach((pessoa, index) => {
     const li = document.createElement("li");
     li.innerHTML = `<span>${index + 1}. ${pessoa.nome}</span> 
-    ${pessoa.prioridade ? '<span class="tag">Prioridade</span>' : ''}`;
+    ${pessoa.prioridade ? '<span class="tag">Prioridade</span>' : ""}`;
 
     if (pessoa.prioridade) {
-  li.classList.add("prioridade");
-}
+      li.classList.add("prioridade");
+    }
 
     lista.appendChild(li);
-    
   });
 }
 
