@@ -13,10 +13,20 @@ function adicionar(tipo = "normal") {
     return;
   }
 
-  if (tipo === "prioridade") {
-    fila.unshift({ nome, prioridade: true });
+  const novaPessoa = {
+    nome,
+    prioridade: tipo === "prioridade",
+  };
+
+  if (novaPessoa.prioridade) {
+    const index = fila.findIndex((p) => !p.prioridade);
+    if (index === -1) {
+      fila.push(novaPessoa);
+    } else {
+      fila.splice(index, 0, novaPessoa);
+    }
   } else {
-    fila.push({ nome, prioridade: false });
+    fila.push(novaPessoa);
   }
 
   input.value = "";
@@ -45,17 +55,25 @@ function renderizarFila() {
   const lista = document.getElementById("lista");
   lista.innerHTML = "";
 
-  fila.forEach((pessoa, index) => {
-    const li = document.createElement("li");
-    li.innerHTML = `<span>${index + 1}. ${pessoa.nome}</span> 
-    ${pessoa.prioridade ? '<span class="tag">Prioridade</span>' : ""}`;
+  if (fila.length === 0) {
+    lista.innerHTML = `<li class="empty-state">Nenhum cliente na fila</li>`;
+  } else {
+    fila.forEach((pessoa, index) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<span>${index + 1}. ${pessoa.nome}</span> 
+      ${pessoa.prioridade ? '<span class="tag">Prioridade</span>' : ""}`;
 
-    if (pessoa.prioridade) {
-      li.classList.add("prioridade");
-    }
+      if (pessoa.prioridade) {
+        li.classList.add("prioridade");
+      } else {
+        li.classList.add("normal");
+      }
 
-    lista.appendChild(li);
-  });
+      lista.appendChild(li);
+    });
+  }
+
+  document.getElementById("contador").textContent = `Total na fila: ${fila.length}`;
 }
 
 renderizarFila();
