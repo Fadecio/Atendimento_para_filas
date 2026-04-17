@@ -1,43 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>QueuePro</title>
-  <link rel="stylesheet" href="src/css/reset.css">
-  <link rel="stylesheet" href="src/css/global.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>QueuePro</title>
+    <link rel="stylesheet" href="src/css/reset.css" />
+    <link rel="stylesheet" href="src/css/global.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>QueuePro</h1>
+        <span>Gestão de Atendimento</span>
+      </header>
 
-  <div class="app">
+      <main class="card">
+        <div class="input-group">
+          <input type="text" id="nome" placeholder="Nome do cliente..." />
+          <button id="btn-adicionar">Adicionar</button>
+          <button id="btn-prioridade" class="priority">Prioridade</button>
+        </div>
 
-    <header>
-      <h1>QueuePro</h1>
-      <span>Gestão de Atendimento</span>
-    </header>
+        <div class="actions">
+          <button id="btn-atender" class="atender">Atender</button>
+          <button id="btn-limpar" class="danger">Limpar</button>
+        </div>
 
-    <main class="card">
+        <div class="info">
+          <p id="contador"></p>
+        </div>
 
-      <div class="input-group">
-        <input type="text" id="nome" placeholder="Nome do cliente...">
-        <button class="adicionar" onclick="adicionar()">Adicionar</button>
-        <button class="priority" onclick="adicionar('prioridade')">Prioridade</button>
-      </div>
+        <ul id="lista"></ul>
+      </main>
+    </div>
 
-      <div class="actions">
-        <button class="atender" onclick="atenderPessoa()">Atender</button>
-        <button class="danger" onclick="limpar()">Limpar</button>
-      </div>
-
-      <div class="info">
-        <p id="contador"></p>
-      </div>
-
-      <ul id="lista"></ul>
-
-    </main>
-
-  </div>
-
-<script src="src/js/funcao.js"></script>
-</body>
+    <script type="module" src="src/js/main.js"></script>
+  </body>
 </html>

@@ -5,6 +5,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   padding-top: 80px 16px 32px;
+  overflow-y: auto;
 }
 
 .app {
@@ -33,6 +34,8 @@ header span {
 
 .card {
   background: rgba(255, 255, 255, 0.05);
+  max-width: 90%;
+  margin: 0 auto;
   backdrop-filter: blur(10px);
   padding: 1.25rem;
   border-radius: 16px;
@@ -70,13 +73,12 @@ button:hover {
 }
 
 .input-group button:first-of-type {
-  background: #2463eb;
-  color: white;
+  background: #2563eb;
 }
 
 .priority {
-  background: #e7be77;
-  color: white;
+  background: #d4a853;
+  opacity: 0.9;
 }
 
 .actions {
@@ -133,6 +135,13 @@ li.prioridade {
   background: rgba(245, 158, 11, 0.08);
 }
 
+li span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 70%;
+}
+
 .tag {
   background: #f59e0b;
   padding: 4px 8px;
@@ -148,6 +157,25 @@ li.prioridade {
   color: #cbd5e1;
   background: 1px dashed rgba(255, 255, 255, 0.15);
   border-left: none;
+}
+
+@media (max-width: 300px) {
+  .card {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .tag {
+    font-size: 0.5rem;
+  }
 }
 
 @media (min-width: 780px) {
