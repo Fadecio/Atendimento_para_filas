@@ -9,13 +9,9 @@ function carregarFilaDoStorage() {
     if (!Array.isArray(parsed)) return [];
 
     return parsed
-      .filter(
-        (pessoa) =>
-          pessoa &&
-          typeof pessoa.nome === "string" &&
-          typeof pessoa.prioridade === "boolean"
+      .filter( pessoa => pessoa && typeof pessoa.nome === "string" && typeof pessoa.prioridade === "boolean"
       )
-      .map((pessoa) => ({ nome: pessoa.nome, prioridade: pessoa.prioridade }));
+      .map( pessoa => ({ nome: pessoa.nome, prioridade: pessoa.prioridade }));
   } catch {
     return [];
   }
@@ -23,6 +19,3 @@ function carregarFilaDoStorage() {
 
 export let fila = carregarFilaDoStorage();
 
-export function setFila(novaFila) {
-  fila = novaFila;
-}

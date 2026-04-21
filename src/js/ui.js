@@ -1,4 +1,5 @@
 import { fila } from "./state.js";
+import { removerPessoa } from "./queue.js";
 
 export function renderizarFila() {
   const lista = document.getElementById("lista");
@@ -15,16 +16,39 @@ export function renderizarFila() {
 
   fila.forEach((pessoa, index) => {
     const li = document.createElement("li");
-
-    li.innerHTML = `<span>${index + 1}. ${pessoa.nome}</span> 
-      ${pessoa.prioridade ? '<span class="tag">Prioridade</span>' : ""}`;
-
+ 
     if (pessoa.prioridade) {
       li.classList.add("prioridade");
     } else {
       li.classList.add("normal");
     }
 
+    const info = document.createElement("span");
+    info.textContent = `${index + 1}. ${pessoa.nome}`;
+
+    const actions = document.createElement("div");
+    actions.classList.add("item-actions");
+
+    if (pessoa.prioridade) {
+      const tag = document.createElement("span");
+      tag.classList.add("tag");
+      tag.textContent = "Prioridade";
+      actions.appendChild(tag);
+    }
+
+    const btnRemover = document.createElement("button");
+    btnRemover.classList.add("btn-remover");
+    btnRemover.textContent = "✕";
+
+    btnRemover.addEventListener("click", () => {
+      removerPessoa(index);
+      renderizarFila();
+    });
+
+    actions.appendChild(btnRemover);
+
+    li.appendChild(info);
+    li.appendChild(actions);
     lista.appendChild(li);
   });
 }
