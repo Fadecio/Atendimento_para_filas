@@ -7,12 +7,22 @@ const btnAdicionar = document.getElementById("btn-adicionar");
 const btnPrioridade = document.getElementById("btn-prioridade");
 const btnAtender = document.getElementById("btn-atender");
 const btnLimpar = document.getElementById("btn-limpar");
+const toast = document.getElementById("toast");
+
+function mostrarToast(mensagem, tipo = "error") {
+  toast.textContent = mensagem;
+  toast.className = `toast show ${tipo}`;
+
+  setTimeout(() => {
+    toast.className = "toast";
+  }, 3000);
+}
 
 function obterNome() {
   const nome = input.value.trim();
 
   if (!nome) {
-    alert("Por favor, insira um nome válido.");
+    mostrarToast("Por favor, insira um nome válido.");
     return null;
   }
 
@@ -51,7 +61,7 @@ btnAtender.addEventListener("click", () => {
   const atendido = atenderPessoa();
 
   if (!atendido) {
-    alert("Fila vazia!");
+    mostrarToast("Fila vazia!");
     return;
   }
 
