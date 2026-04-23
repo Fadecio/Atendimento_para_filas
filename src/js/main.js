@@ -9,11 +9,15 @@ const btnAtender = document.getElementById("btn-atender");
 const btnLimpar = document.getElementById("btn-limpar");
 const toast = document.getElementById("toast");
 
+let toastTimeout;
+
 function mostrarToast(mensagem, tipo = "error") {
   toast.textContent = mensagem;
   toast.className = `toast show ${tipo}`;
 
-  setTimeout(() => {
+  clearTimeout(toastTimeout);
+
+  toastTimeout = setTimeout(() => {
     toast.className = "toast";
   }, 3000);
 }
@@ -32,12 +36,11 @@ function obterNome() {
 
 function atualizarBotoes() {
   const vazio = fila.length === 0;
-  btnAtender.disabled = vazio;
   btnLimpar.disabled = vazio;
 }
 
 function atualizarTela() {
-  renderizarFila();
+  renderizarFila(atualizarTela);
   atualizarBotoes();
 }
 
@@ -47,6 +50,7 @@ btnAdicionar.addEventListener("click", () => {
 
   adicionarPessoa(nome, false);
   atualizarTela();
+  mostrarToast("Cliente adicionado com sucesso!", "success");
 });
 
 btnPrioridade.addEventListener("click", () => {
@@ -55,6 +59,7 @@ btnPrioridade.addEventListener("click", () => {
 
   adicionarPessoa(nome, true);
   atualizarTela();
+  mostrarToast("Cliente prioritário adicionado.", "success");
 });
 
 btnAtender.addEventListener("click", () => {
@@ -71,6 +76,7 @@ btnAtender.addEventListener("click", () => {
 btnLimpar.addEventListener("click", () => {
   limparFila();
   atualizarTela();
+  mostrarToast("Fila limpa com sucesso.", "success");
 });
 
 input.addEventListener("keydown", (event) => {

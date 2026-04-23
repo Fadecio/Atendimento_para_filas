@@ -16,14 +16,15 @@
 
       <main class="card">
         <div class="input-group">
+          <label for="nome" class="sr-only">Nome do cliente</label>
           <input type="text" id="nome" placeholder="Nome do cliente..." />
-          <button id="btn-adicionar">Adicionar</button>
-          <button id="btn-prioridade" class="priority">Prioridade</button>
+          <button type="button" id="btn-adicionar">Adicionar</button>
+          <button type="button" id="btn-prioridade" class="priority">Prioridade</button>
         </div>
 
         <div class="actions">
-          <button id="btn-atender" class="atender">Atender</button>
-          <button id="btn-limpar" class="danger">Limpar</button>
+          <button type="button" id="btn-atender" class="atender">Atender</button>
+          <button type="button" id="btn-limpar" class="danger">Limpar</button>
         </div>
 
         <div class="info">
@@ -34,7 +35,7 @@
       </main>
     </div>
 
-    <div id="toast" class="toast"></div>
+    <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
 
     <script type="module" src="src/js/main.js"></script>
   </body>

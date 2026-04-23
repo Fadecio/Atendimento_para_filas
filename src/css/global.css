@@ -50,12 +50,29 @@ header span {
   margin-bottom: 1rem;
 }
 
+.input-group button:first-of-type {
+  background: #2563eb;
+  color: white;
+}
+
 input {
   width: 100%;
   padding: 0.8rem;
   border-radius: 8px;
   border: none;
   font-size: 0.9rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 button {
@@ -76,6 +93,17 @@ button:hover {
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  filter: grayscale(0.2);
+}
+
+button:disabled:hover {
+  opacity: 0.5;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
 }
 
 .input-group button:first-of-type {
@@ -84,6 +112,7 @@ button:disabled {
 
 .priority {
   background: #d4a853;
+  color: #111827;
   opacity: 0.9;
 }
 
@@ -99,7 +128,7 @@ button:disabled {
 }
 
 .danger {
-  background: #ec7878;
+  background: #ef4444;
   color: white;
 }
 
@@ -167,11 +196,28 @@ li span {
 }
 
 .empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
   text-align: center;
-  padding: 1rem;
+  padding: 1.25rem;
   color: #cbd5e1;
-  /* background: 1px dashed rgba(255, 255, 255, 0.15); */
+  border: 1px dashed rgba(255, 255, 255, 0.2);
   border-left: none;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+
+.empty-state strong {
+  font-size: 0.95rem;
+  color: white;
+}
+
+.empty-state span {
+  font-size: 0.8rem;
+  opacity: 0.8;
 }
 
 .item-actions {
