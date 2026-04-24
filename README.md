@@ -1,24 +1,100 @@
 # QueuePro
 
-Sistema web de gerenciamento de filas com suporte a prioridade estável, persistência local e interface responsiva.
+Sistema web de gerenciamento de filas com suporte a prioridade, persistência local e feedback visual para ações do usuário.
 
-## Visão geral
+## Sobre o projeto
 
-O **QueuePro** foi desenvolvido para simular um cenário real de atendimento, permitindo organizar clientes em uma fila, aplicar prioridade corretamente, atender o próximo da fila e remover clientes individualmente.
+O QueuePro simula um cenário real de atendimento, permitindo adicionar clientes à fila, marcar prioridades, atender o próximo cliente, remover itens específicos e manter os dados salvos no navegador.
 
-Mais do que uma lista dinâmica, o projeto foi pensado para praticar conceitos importantes de desenvolvimento frontend, como:
-
-- lógica de fila
-- regra de negócio com prioridade
-- manipulação de DOM
-- persistência com `localStorage`
-- modularização em JavaScript
-- experiência do usuário com feedback visual
-- responsividade e acessibilidade básica
+O objetivo do projeto foi praticar lógica de fila, manipulação de DOM, organização de código em módulos e construção de uma interface responsiva com foco em experiência do usuário.
 
 ## Preview
 
-<video width="100%" controls>
-  <source src="./src/imagens/video_atendimento_para_filas.mp4" type="video/mp4">
-  Seu navegador não suporta vídeos HTML5.
-</video>
+![Tela principal](./src/imagens/desktop_fila.png)
+![Estado vazio](./src/imagens/desktop_estado_vazio.png)
+![Versão mobile](./src/imagens/desktop_vazio.png)
+
+## Funcionalidades
+
+- Adição de clientes na fila
+- Adição de clientes prioritários
+- Atendimento do próximo cliente
+- Remoção individual de clientes
+- Persistência dos dados no navegador com localStorage
+- Toasts para feedback de ações
+- Estado vazio orientativo
+- Interface responsiva
+- Feedback visual para foco e estados de botão
+
+## Tecnologias utilizadas
+- HTML5
+- CSS3
+- JavaScript
+- LocalStorage
+
+## Decisões técnicas
+### Prioridade estável
+
+Clientes prioritários entram antes dos clientes normais, mas respeitando a ordem de chegada entre os próprios prioritários.
+
+### Persistência local
+
+A fila é salva no navegador usando localStorage, permitindo manter o estado mesmo após recarregar a página.
+
+### Organização modular
+
+A aplicação foi separada por responsabilidade:
+
+- main.js: eventos e coordenação da tela
+- ui.js: renderização da interface
+- queue.js: regras da fila
+- state.js: estado inicial
+- storage.js: persistência
+
+### UX e acessibilidade
+- Toast para feedback de ações
+- Estado vazio com orientação
+- label semântico no input
+- aria-label no botão de remover
+- aria-live no toast
+- foco visível para navegação por teclado
+
+## Como executar o projeto
+
+### Opção 1 — abrir localmente
+
+Basta abrir o arquivo index.html no navegador.
+
+### Opção 2 — usar Live Server
+
+Se estiver usando o VS Code, rode com a extensão Live Server para facilitar os testes.
+
+## Aprendizados
+
+### Com este projeto, pratiquei:
+
+- modelagem de regra de negócio
+- manipulação de arrays com prioridade
+- atualização dinâmica da interface
+- persistência de estado no navegador
+- morganização modular em JavaScript
+- melhorias de experiência do usuário
+- refinamento visual e responsividade
+
+## Próximos passos
+
+- adicionar geração de senha para atendimento
+- exibir histórico de clientes atendidos
+- implementar métricas da fila
+- evoluir a interface para uma versão em React
+
+## Deploy
+
+[Visualizar projeto online](SEU_LINK_AQUI)
+
+## Autor
+
+Desenvolvido por Fadecio Lemos.
+
+- GitHub: https://github.com/Fadecio
+- LinkedIn: www.linkedin.com/in/fadecio-lemos
