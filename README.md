@@ -1,4 +1,5 @@
 # QueuePro
+Projeto de portfólio desenvolvido para praticar lógica de filas, modularização em JavaScript e melhorias de UX em uma interface responsiva
 
 Sistema web de gerenciamento de filas com suporte a prioridade, persistência local e feedback visual para ações do usuário.
 
@@ -76,7 +77,7 @@ Se estiver usando o VS Code, rode com a extensão Live Server para facilitar os 
 - manipulação de arrays com prioridade
 - atualização dinâmica da interface
 - persistência de estado no navegador
-- morganização modular em JavaScript
+- organização modular em JavaScript
 - melhorias de experiência do usuário
 - refinamento visual e responsividade
 
@@ -89,11 +90,11 @@ Se estiver usando o VS Code, rode com a extensão Live Server para facilitar os 
 
 ## Deploy
 
-[Visualizar projeto online] https://atendimento-para-filas.vercel.app
+[Visualizar projeto online] (https://atendimento-para-filas.vercel.app)
 
 ## Autor
 
 Desenvolvido por Fadecio Lemos.
 
 - GitHub: https://github.com/Fadecio
-- LinkedIn: www.linkedin.com/in/fadecio-lemos
+- LinkedIn: https://linkedin.com/in/fadecio-lemos
