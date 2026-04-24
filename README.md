@@ -11,8 +11,7 @@ O objetivo do projeto foi praticar lógica de fila, manipulação de DOM, organi
 ## Preview
 
 ![Tela principal](./src/imagens/desktop_fila.png)
-![Estado vazio](./src/imagens/desktop_estado_vazio.png)
-![Versão mobile](./src/imagens/desktop_vazio.png)
+![Versão mobile](./src/imagens/mobile.png)
 
 ## Funcionalidades
 
@@ -90,7 +89,7 @@ Se estiver usando o VS Code, rode com a extensão Live Server para facilitar os 
 
 ## Deploy
 
-[Visualizar projeto online](SEU_LINK_AQUI)
+[Visualizar projeto online] https://atendimento-para-filas.vercel.app
 
 ## Autor
 
