@@ -1,7 +1,7 @@
 import { fila } from "./state.js";
 import { removerPessoa } from "./queue.js";
 
-export function renderizarFila(onAtualizarTela) {
+export function renderizarFila(onAtualizarTela, onRemoverPessoa) {
   const lista = document.getElementById("lista");
   const contador = document.getElementById("contador");
 
@@ -49,7 +49,13 @@ export function renderizarFila(onAtualizarTela) {
     btnRemover.title = `Remover ${pessoa.nome}`;
 
     btnRemover.addEventListener("click", () => {
+      const nomeRemovido = pessoa.nome;
       removerPessoa(index);
+
+      if (onRemoverPessoa) {
+        onRemoverPessoa(nomeRemovido);
+        return;
+      }
       onAtualizarTela();
     });
 

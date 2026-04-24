@@ -39,8 +39,13 @@ function atualizarBotoes() {
   btnLimpar.disabled = vazio;
 }
 
+function aoRemoverPessoa(nome) {
+  atualizarTela();
+  mostrarToast(`${nome} foi removido da fila.`, "success");
+}
+
 function atualizarTela() {
-  renderizarFila(atualizarTela);
+  renderizarFila(atualizarTela, aoRemoverPessoa);
   atualizarBotoes();
 }
 
@@ -71,6 +76,7 @@ btnAtender.addEventListener("click", () => {
   }
 
   atualizarTela();
+  mostrarToast(`Atendendo: ${atendido.nome}`, "success");
 });
 
 btnLimpar.addEventListener("click", () => {
@@ -86,6 +92,7 @@ input.addEventListener("keydown", (event) => {
 
     adicionarPessoa(nome, false);
     atualizarTela();
+    mostrarToast("Cliente adicionado com sucesso!", "success");
   }
 });
 
