@@ -1,21 +1,41 @@
 # QueuePro
 
+---
+
 Projeto de portfólio desenvolvido para praticar lógica de filas, modularização em JavaScript e melhorias de UX em uma interface responsiva.
 
 Sistema web de gerenciamento de filas com suporte a prioridade, persistência local e feedback visual para ações do usuário.
 
+---
+
 ## Sobre o projeto
+
+---
 
 O QueuePro simula um cenário real de atendimento, permitindo adicionar clientes à fila, marcar prioridades, atender o próximo cliente, remover itens específicos e manter os dados salvos no navegador.
 
 O objetivo do projeto foi praticar lógica de fila, manipulação de DOM, organização de código em módulos e construção de uma interface responsiva com foco em experiência do usuário.
 
+---
+
 ## Preview
 
-![Tela principal](./src/imagens/desktop_fila.png)
-![Versão mobile](./src/imagens/mobile.png)
+---
+
+<p align="center">
+  <img 
+    src="./src/imagens/github.png" 
+    alt="Preview de apresentação do CoinPulse" 
+    width="900" 
+    height="506"
+  >
+</p>
+
+---
 
 ## Funcionalidades
+
+---
 
 - Adição de clientes na fila
 - Adição de clientes prioritários
@@ -27,22 +47,39 @@ O objetivo do projeto foi praticar lógica de fila, manipulação de DOM, organi
 - Interface responsiva
 - Feedback visual para foco e estados de botão
 
+---
+
 ## Tecnologias utilizadas
+
+---
+
 - HTML5
 - CSS3
 - JavaScript
 - LocalStorage
 
+---
+
 ## Decisões técnicas
 ### Prioridade estável
 
+---
+
 Clientes prioritários entram antes dos clientes normais, mas respeitando a ordem de chegada entre os próprios prioritários.
+
+---
 
 ### Persistência local
 
+---
+
 A fila é salva no navegador usando localStorage, permitindo manter o estado mesmo após recarregar a página.
 
+---
+
 ### Organização modular
+
+---
 
 A aplicação foi separada por responsabilidade:
 
@@ -52,7 +89,12 @@ A aplicação foi separada por responsabilidade:
 - state.js: estado inicial
 - storage.js: persistência
 
+---
+
 ### UX e acessibilidade
+
+---
+
 - Toast para feedback de ações
 - Estado vazio com orientação
 - label semântico no input
@@ -60,17 +102,27 @@ A aplicação foi separada por responsabilidade:
 - aria-live no toast
 - foco visível para navegação por teclado
 
+---
+
 ## Como executar o projeto
+
+---
 
 ### Opção 1 — abrir localmente
 
 Basta abrir o arquivo index.html no navegador.
 
+---
+
 ### Opção 2 — usar Live Server
 
 Se estiver usando o VS Code, rode com a extensão Live Server para facilitar os testes.
 
+---
+
 ## Aprendizados
+
+---
 
 ### Com este projeto, pratiquei:
 
@@ -82,6 +134,8 @@ Se estiver usando o VS Code, rode com a extensão Live Server para facilitar os 
 - melhorias de experiência do usuário
 - refinamento visual e responsividade
 
+---
+
 ## Próximos passos
 
 - adicionar geração de senha para atendimento
@@ -89,9 +143,15 @@ Se estiver usando o VS Code, rode com a extensão Live Server para facilitar os 
 - implementar métricas da fila
 - evoluir a interface para uma versão em React
 
+---
+
 ## Deploy
 
+---
+
 [Visualizar projeto online](https://atendimento-para-filas.vercel.app)
+
+---
 
 ## Autor
 
@@ -99,3 +159,5 @@ Desenvolvido por Fadecio Lemos.
 
 - GitHub: https://github.com/Fadecio
 - LinkedIn: https://linkedin.com/in/fadecio-lemos
+
+---
