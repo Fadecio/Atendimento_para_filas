@@ -6,6 +6,10 @@ Projeto de portfólio desenvolvido para praticar lógica de filas, modularizaç�
 
 Sistema web de gerenciamento de filas com suporte a prioridade, persistência local e feedback visual para ações do usuário.
 
+- Deploy: atendimento-para-filas.vercel.app 
+- Status: Finalizado  
+- Conceitos praticados: JavaScript, DOM, localStorage, responsividade, UX  
+
 ---
 
 ## Sobre o projeto
