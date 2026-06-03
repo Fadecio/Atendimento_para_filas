@@ -1,6 +1,6 @@
 # QueuePro
 
----
+
 
 Projeto de portfólio desenvolvido para praticar lógica de filas, modularização em JavaScript e melhorias de UX em uma interface responsiva.
 
@@ -10,7 +10,7 @@ Sistema web de gerenciamento de filas com suporte a prioridade, persistência lo
 
 ## Sobre o projeto
 
----
+
 
 O QueuePro simula um cenário real de atendimento, permitindo adicionar clientes à fila, marcar prioridades, atender o próximo cliente, remover itens específicos e manter os dados salvos no navegador.
 
@@ -20,7 +20,7 @@ O objetivo do projeto foi praticar lógica de fila, manipulação de DOM, organi
 
 ## Preview
 
----
+
 
 <p align="center">
   <img 
@@ -35,7 +35,7 @@ O objetivo do projeto foi praticar lógica de fila, manipulação de DOM, organi
 
 ## Funcionalidades
 
----
+
 
 - Adição de clientes na fila
 - Adição de clientes prioritários
@@ -51,19 +51,19 @@ O objetivo do projeto foi praticar lógica de fila, manipulação de DOM, organi
 
 ## Tecnologias utilizadas
 
----
+
 
 - HTML5
 - CSS3
 - JavaScript
 - LocalStorage
 
----
+
 
 ## Decisões técnicas
 ### Prioridade estável
 
----
+
 
 Clientes prioritários entram antes dos clientes normais, mas respeitando a ordem de chegada entre os próprios prioritários.
 
@@ -71,7 +71,7 @@ Clientes prioritários entram antes dos clientes normais, mas respeitando a orde
 
 ### Persistência local
 
----
+
 
 A fila é salva no navegador usando localStorage, permitindo manter o estado mesmo após recarregar a página.
 
@@ -79,7 +79,7 @@ A fila é salva no navegador usando localStorage, permitindo manter o estado mes
 
 ### Organização modular
 
----
+
 
 A aplicação foi separada por responsabilidade:
 
@@ -93,7 +93,7 @@ A aplicação foi separada por responsabilidade:
 
 ### UX e acessibilidade
 
----
+
 
 - Toast para feedback de ações
 - Estado vazio com orientação
@@ -106,7 +106,7 @@ A aplicação foi separada por responsabilidade:
 
 ## Como executar o projeto
 
----
+
 
 ### Opção 1 — abrir localmente
 
@@ -122,7 +122,7 @@ Se estiver usando o VS Code, rode com a extensão Live Server para facilitar os 
 
 ## Aprendizados
 
----
+
 
 ### Com este projeto, pratiquei:
 
@@ -147,7 +147,7 @@ Se estiver usando o VS Code, rode com a extensão Live Server para facilitar os 
 
 ## Deploy
 
----
+
 
 [Visualizar projeto online](https://atendimento-para-filas.vercel.app)
 
