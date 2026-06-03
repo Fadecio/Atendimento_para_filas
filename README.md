@@ -25,7 +25,7 @@ O objetivo do projeto foi praticar lógica de fila, manipulação de DOM, organi
 <p align="center">
   <img 
     src="./src/imagens/github.png" 
-    alt="Preview de apresentação do CoinPulse" 
+    alt="Preview de apresentação do QueuePro" 
     width="900" 
     height="506"
   >
